@@ -2,6 +2,7 @@ package oom.pocket.acostop;
 
 import android.content.Intent;
 import android.net.Uri;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -13,7 +14,7 @@ import com.google.android.gms.ads.MobileAds;
 public class HelpActivity extends AppCompatActivity implements View.OnClickListener{
 
     Button urlAdivac, callAdivac, urlCora, callCora, urlInmujeres, callInmujeres,
-    urlPgj, callPgj, urlSaptel, callSaptel, urlIle, urlUapvif, callUapvif;
+    urlPgj, callPgj, urlSaptel, callSaptel, urlIle, urlUapvif, callUapvif, btnShare;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +33,7 @@ public class HelpActivity extends AppCompatActivity implements View.OnClickListe
         urlIle = (Button)findViewById(R.id.url_ile);
         urlUapvif = (Button)findViewById(R.id.url_uapvif);
         callUapvif = (Button)findViewById(R.id.call_uapvif);
+        btnShare = (Button) findViewById(R.id.btn_share);
 
         urlAdivac.setOnClickListener(this);
         callAdivac.setOnClickListener(this);
@@ -46,6 +48,7 @@ public class HelpActivity extends AppCompatActivity implements View.OnClickListe
         urlIle.setOnClickListener(this);
         urlUapvif.setOnClickListener(this);
         callUapvif.setOnClickListener(this);
+        btnShare.setOnClickListener(this);
 
         MobileAds.initialize(this, "ca-app-pub-2236350735048598/1813503450");
     }
@@ -93,6 +96,9 @@ public class HelpActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.call_uapvif:
                 call("5555185210");
                 break;
+            case R.id.btn_share:
+                share();
+                break;
         }
     }
 
@@ -108,5 +114,9 @@ public class HelpActivity extends AppCompatActivity implements View.OnClickListe
         Intent dialIntent = new Intent(Intent.ACTION_DIAL);
         dialIntent.setData(Uri.parse("tel:" + phone));
         startActivity(dialIntent);
+    }
+
+    private void share(){
+        //TODO(1) Share this shit
     }
 }

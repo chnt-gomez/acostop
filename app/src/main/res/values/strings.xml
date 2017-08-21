@@ -58,4 +58,6 @@
     <string name="error_explorer" translatable="false">No hay un navegador de internet instalado.</string>
     <string name="sabias_que">Lo sabías?</string>
     <string name="app_description">AcoStop es una aplicación gratuita que recolecta información disponible en Internet a través de diferentes instancias gubernamentales y asociaciones sin fines de lucro. Su función es meramente la de informar y los resultados que muestra no deberían considerarse como exámenes médicos o psicológicos. Si te sientes inseguro/a o sufres de cualquier tipo de violencia por parte de tu pareja sentimental o sexual, no dudes en buscar ayuda inmediatamente.</string>
+    <string name="compartir">Si crees que algún amigo/a o familiar está en una relación violenta o simplemente quieres compartir esta información, difunde el mensaje para erradicar la violencia dentro de las relaciones.</string>
+    <string name="comparte">Comparte...</string>
 </resources>
