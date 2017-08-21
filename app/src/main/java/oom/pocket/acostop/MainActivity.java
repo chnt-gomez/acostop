@@ -10,7 +10,7 @@ import com.google.android.gms.ads.MobileAds;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    Button iniciarTest;
+    Button iniciarTest, seekHelp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +22,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void init() {
         iniciarTest = (Button)findViewById(R.id.btn_start_test_relationship_violence);
         iniciarTest.setOnClickListener(this);
+        seekHelp = (Button)findViewById(R.id.btn_seek_help);
+        seekHelp.setOnClickListener(this);
         MobileAds.initialize(this, "ca-app-pub-2236350735048598/6982247264");
     }
 
