@@ -19,7 +19,7 @@
         </activity>
         <activity android:name=".TestActivity" />
         <activity android:name=".HelpActivity" />
-        <activity android:name=".BrowserActivity"></activity>
+        <activity android:name=".BrowserActivity"/>
     </application>
 
 </manifest>

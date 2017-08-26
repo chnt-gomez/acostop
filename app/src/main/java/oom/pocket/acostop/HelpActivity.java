@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
 
 public class HelpActivity extends AppCompatActivity implements View.OnClickListener{
@@ -51,6 +53,9 @@ public class HelpActivity extends AppCompatActivity implements View.OnClickListe
         btnShare.setOnClickListener(this);
 
         MobileAds.initialize(this, "ca-app-pub-2236350735048598/1813503450");
+        AdView mAdView = (AdView) findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
     }
 
 
@@ -58,25 +63,25 @@ public class HelpActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.url_adivac:
-                openUrl("www.adivac.org");
+                openUrl("http://www.adivac.org");
                 break;
             case R.id.url_cora:
-                openUrl("www.cora.org.mx");
+                openUrl("http://www.cora.org.mx");
                 break;
             case R.id.url_inmujeres:
-                openUrl("www.inmujeres.df.gob.mx");
+                openUrl("http://www.inmujeres.df.gob.mx");
                 break;
             case R.id.url_pgj:
-                openUrl("www.pgjdf.gob.mx/index.php/servicios/atencionvictimas/adevi");
+                openUrl("http://www.pgj.cdmx.gob.mx/");
                 break;
             case R.id.url_ile:
-                openUrl("www.inmujeres.df.gob.mx/wb/inmujeres/interrupcion_legal_del_embarazo");
+                openUrl("http://data.inmujeres.cdmx.gob.mx/interrupcion-legal-del-embarazo/");
                 break;
             case R.id.url_saptel:
                 openUrl("http://www.saptel.org.mx/");
                 break;
             case R.id.url_uapvif:
-                openUrl("www.equidad.df.gob.mx/vfamiliar/red_uapvif.html");
+                openUrl("http://www.pgj.cdmx.gob.mx/cavi");
                 break;
             case R.id.call_adivac:
                 call("5556827969");
@@ -103,11 +108,12 @@ public class HelpActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void openUrl(String url) {
-        Intent intent = new Intent(HelpActivity.this, BrowserActivity.class);
-        Bundle bundle = new Bundle();
-        bundle.putString("URL", url);
-        intent.putExtras(bundle);
-        startActivity(intent);
+        try {
+            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+            startActivity(browserIntent);
+        }catch (Exception e){
+            Toast.makeText(getApplicationContext(), "Navegador no compatible", Toast.LENGTH_SHORT).show();
+        }
     }
 
     private void call(String phone){
@@ -117,6 +123,11 @@ public class HelpActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void share(){
-        //TODO(1) Share this shit
+        Intent sendIntent = new Intent();
+        sendIntent.setAction(Intent.ACTION_SEND);
+        sendIntent.putExtra(Intent.EXTRA_TEXT,
+                "Prevención de violencia en la relación: https://play.google.com/store/apps/details?id=oom.pocket.acostop");
+        sendIntent.setType("text/plain");
+        startActivity(sendIntent);
     }
 }

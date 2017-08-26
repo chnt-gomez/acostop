@@ -3,7 +3,6 @@
     <string name="adivac">ADIVAC. Asociación para el Desarrollo Integral para Personal Violadas, A.C.</string>
     <string name="adivac_desc">Organización no gubernamental que brinda atención médica, legal y psicológica a personas violentadas sexualmente.</string>
     <string name="app_description">AcoStop es una aplicación gratuita que recolecta información disponible en Internet a través de diferentes instancias gubernamentales y asociaciones sin fines de lucro. Su función es meramente la de informar y los resultados que muestra no deberían considerarse como exámenes médicos o psicológicos. Si te sientes inseguro/a o sufres de cualquier tipo de violencia por parte de tu pareja sentimental o sexual, no dudes en buscar ayuda inmediatamente.</string>
-    <string name="app_name" translatable="false"></string>
     <string name="ayudarte">Buscar ayuda es el primer paso para liberarte de una relación que sufre de violencia. Las siguientes entradas te pueden proporcionar apoyo psicológico, legal, jurídico o médico.</string>
     <string name="buscar_ayuda">Buscar ayuda</string>
     <string name="cora">CORA. Centro de Orientación para Adolescentes - Centro de Atención y Capacitación Integral, A.C.</string>
@@ -58,4 +57,7 @@
     <string name="uapvif">UAPVIF. Red de Unidades de Atencion y Prevención a la Violencia Intrafamiliar.</string>
     <string name="uapvif_desc">Esta red pertenece a la Dirección General de Igualdad y Diversidad Social de la Secretaría de Desarrollo Social del Distrito Deferal. Se cuenta con una Unidad de Atención en cada delegación que brinda asesoría psicológica y jurídica para víctimas de violencia familiar.</string>
     <string name="website">Sitio web</string>
+    <string name="comparte">Comparte...</string>
+    <string name="compartir">Si crees que algún amigo/a o familiar está en una relación violenta o simplemente quieres compartir esta información, difunde el mensaje para erradicar la violencia dentro de las relaciones.</string>
+    <string name="app_name">AcoStop</string>
 </resources>

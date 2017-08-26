@@ -27,7 +27,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             ads:adSize="LARGE_BANNER"
-            ads:adUnitId=" ca-app-pub-2236350735048598/1813503450"
+            ads:adUnitId="ca-app-pub-2236350735048598/1813503450"
             android:layout_marginBottom="@dimen/activity_horizontal_margin"/>
 
 
