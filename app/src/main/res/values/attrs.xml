@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="Label">
+        <attr name="label_text" format="string"/>
+        <attr name="display_text" format="string"/>
+        <attr name="button_text" format="string"/>
+        <attr name="button_id" format="integer"/>
+    </declare-styleable>
+</resources>

@@ -10,9 +10,12 @@ import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
 
+import oom.pocket.acostop.views.TestCard;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    Button iniciarTest, seekHelp;
+    Button seekHelp;
+    TestCard testViolenciaRelacion, infoAcoso, infoHostigamiento;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,10 +25,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void init() {
-        iniciarTest = (Button)findViewById(R.id.btn_start_test_relationship_violence);
-        iniciarTest.setOnClickListener(this);
         seekHelp = (Button)findViewById(R.id.btn_seek_help);
         seekHelp.setOnClickListener(this);
+        testViolenciaRelacion = (TestCard)findViewById(R.id.tc_test_violencia_relacion);
+        testViolenciaRelacion.setOnButtonClickListener(this);
+        infoAcoso = (TestCard)findViewById(R.id.tc_acoso);
+        infoAcoso.setOnButtonClickListener(this);
+        infoHostigamiento = (TestCard)findViewById(R.id.tc_hostigamiento);
+        infoHostigamiento.setOnButtonClickListener(this);
         MobileAds.initialize(this, "ca-app-pub-2236350735048598/6982247264");
         AdView mAdView = (AdView) findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
@@ -35,13 +42,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-            case R.id.btn_start_test_relationship_violence:
-                Intent intentTest = new Intent(MainActivity.this, TestActivity.class);
-                startActivity(intentTest);
+            case R.id.btn_test_violencia_relacion:
+                Intent intentTestViolencia = new Intent(MainActivity.this, TestActivity.class);
+                startActivity(intentTestViolencia);
                 break;
             case R.id.btn_seek_help:
                 Intent intentHelp = new Intent(MainActivity.this, HelpActivity.class);
                 startActivity(intentHelp);
+                break;
+            case R.id.btn_info_acoso:
+                Intent intentAcoso = new Intent(MainActivity.this, ActivityAcoso.class);
+                startActivity(intentAcoso);
+                break;
+            case R.id.btn_info_hostigamiento:
+                Intent intentHostigamiento = new Intent(MainActivity.this, ActivityHostigamiento.class);
+                startActivity(intentHostigamiento);
                 break;
         }
     }
