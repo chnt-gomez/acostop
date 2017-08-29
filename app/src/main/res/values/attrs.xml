@@ -2,8 +2,12 @@
 <resources>
     <declare-styleable name="Label">
         <attr name="label_text" format="string"/>
-        <attr name="display_text" format="string"/>
-        <attr name="button_text" format="string"/>
+        <attr name="button_src" format="integer"/>
+        <attr name="button_background" format="integer"/>
         <attr name="button_id" format="integer"/>
+        <attr name="alignmenr" format="enum">
+            <enum name="start" value="1"/>
+            <enum name="ënd" value="2"/>
+        </attr>
     </declare-styleable>
 </resources>

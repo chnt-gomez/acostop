@@ -86,4 +86,8 @@
     <string name="hostiga_cuatro">4. Que publiquen o exhiban sin tu consentimiento: imágenes u objetos íntimos personales de notas sexuales (Fotos de desnudos, prendas intimas) o que simplemente logren humillarte u ofenderte.</string>
     <string name="hostiga_cinco">5. Crear condiciones claramente humillantes o violentas para ti, donde el agresor puede o no resultar beneficiado. Como por ejemplo sentarte en un lugar del salón de clases donde tu agresor pueda ver tu ropa interior o colocarte en un lugar donde todos te vean para burlarse de ti.</string>
     <string name="facebook_app_id" translatable="false">1576776569047213</string>
+    <string name="login_facebook">Iniciar sesión en Facebook</string>
+    <string name="app_intro">Bienvenido a AcoStop. Toma alguno de los tests disponibles si quieres saber más acerca de tu situación o comportamiento.</string>
+    <string name="info_facebook">Visita nuestra página en Facebook</string>
+    <string name="calcular">Calcular</string>
 </resources>

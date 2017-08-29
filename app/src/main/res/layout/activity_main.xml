@@ -5,73 +5,96 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="oom.pocket.acostop.MainActivity">
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin">
 
         <oom.pocket.acostop.views.TestCard
             app:button_id="@+id/btn_test_violencia_relacion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:label_text="@string/test_violencia_relacion"
-            app:display_text="@string/intro"
+            app:button_src="@drawable/ic_pencil"
+            app:button_background="@drawable/selector_button"
             android:id="@+id/tc_test_violencia_relacion"
-            app:button_text="@string/iniciar_test"/>
+            android:layout_marginBottom="@dimen/activity_horizontal_margin"/>
+
 
         <oom.pocket.acostop.views.TestCard
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:button_id="@+id/btn_info_acoso"
             android:id="@+id/tc_acoso"
+            app:button_src="@drawable/ic_alert_circle_outline"
+            app:button_background="@drawable/selector_button_info"
             app:label_text="@string/info_acoso_general"
-            app:display_text="@string/info_acoso_general_desc" />
+            android:layout_marginBottom="@dimen/activity_horizontal_margin"/>
+
+
         <oom.pocket.acostop.views.TestCard
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:button_id="@+id/btn_info_hostigamiento"
+            app:button_src="@drawable/ic_alert_circle_outline"
+            app:button_background="@drawable/selector_button_info"
             android:id="@+id/tc_hostigamiento"
             app:label_text="@string/info_hostigamiento"
-            app:display_text="@string/info_hostigamiento_desc" />
+            android:layout_marginBottom="@dimen/activity_horizontal_margin"/>
 
+        <oom.pocket.acostop.views.TestCard
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:button_id="@+id/btn_facebook"
+            app:button_src="@drawable/ic_facebook_page"
+            app:button_background="@drawable/selector_button_info"
+            android:id="@+id/tc_facebook"
+            app:label_text="@string/info_facebook"
+            android:layout_marginBottom="@dimen/activity_horizontal_margin"/>
+
+
+        <com.facebook.share.widget.LikeView
+            android:layout_width="wrap_content"
+            android:layout_gravity="left"
+            android:layout_height="wrap_content"
+            android:id="@+id/likeView"/>
+
+        <android.support.v4.widget.Space
+            android:layout_width="match_parent"
+            android:layout_height="8dp" />
 
         <com.google.android.gms.ads.AdView
-        xmlns:ads="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/adView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        ads:adSize="BANNER"
-        ads:adUnitId="ca-app-pub-2236350735048598/6982247264"
-        android:layout_marginBottom="@dimen/activity_horizontal_margin">
-
-    </com.google.android.gms.ads.AdView>
-
+            xmlns:ads="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/adView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            ads:adSize="BANNER"
+            ads:adUnitId="ca-app-pub-2236350735048598/6982247264"
+            android:layout_marginBottom="@dimen/activity_horizontal_margin"/>
 
         <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/app_description"
-        android:layout_marginBottom="@dimen/activity_horizontal_margin"/>
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/app_description"
+            android:layout_marginBottom="@dimen/activity_horizontal_margin"/>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_marginBottom="@dimen/activity_horizontal_margin"
-        android:layout_height="wrap_content"
-        android:id="@+id/btn_seek_help"
-        android:text="@string/buscar_ayuda"
-        android:paddingLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/activity_horizontal_margin"
-        android:background="@drawable/selector_button"
-        android:layout_gravity="center"/>
-
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_marginBottom="@dimen/activity_horizontal_margin"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_seek_help"
+            android:text="@string/buscar_ayuda"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:background="@drawable/selector_button"
+            android:layout_gravity="center"/>
 
     </LinearLayout>
-
 
 </ScrollView>

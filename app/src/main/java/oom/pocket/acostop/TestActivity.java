@@ -1,6 +1,7 @@
 package oom.pocket.acostop;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -24,6 +25,7 @@ public class TestActivity extends AppCompatActivity {
     CheckBox[] box_3;
     TextView tvRecomendation;
     Button helpButton;
+    AsyncTask task;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
