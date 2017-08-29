@@ -1,7 +1,9 @@
 package oom.pocket.acostop;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -10,6 +12,8 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+
+import oom.pocket.acostop.dialogs.DialogBuilder;
 
 import static android.R.attr.checked;
 import static android.R.attr.start;
@@ -24,7 +28,7 @@ public class TestActivity extends AppCompatActivity {
     CheckBox[] box_2;
     CheckBox[] box_3;
     TextView tvRecomendation;
-    Button helpButton;
+    Button calculateButton;
     AsyncTask task;
 
     @Override
@@ -34,14 +38,30 @@ public class TestActivity extends AppCompatActivity {
         init();
     }
 
+    private void calculate() {
+        final Dialog dialog = DialogBuilder.newLoadingDialog(TestActivity.this);
+        dialog.show();
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                dialog.dismiss();
+                showResults();
+            }
+        }, 4000);
+    }
+
+    private void showResults() {
+        bar.setVisibility(View.VISIBLE);
+        tvRecomendation.setVisibility(View.VISIBLE);
+    }
+
     private void init(){
-        helpButton = (Button)findViewById(R.id.btn_help);
-        helpButton.setOnClickListener(new View.OnClickListener() {
+        calculateButton = (Button)findViewById(R.id.btn_calculate);
+        calculateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(TestActivity.this, HelpActivity.class);
-                startActivity(intent);
-
+                calculate();
             }
         });
         bar = (ProgressBar)findViewById(R.id.progressBar);
@@ -108,6 +128,9 @@ public class TestActivity extends AppCompatActivity {
     }
 
     private void updateViolenceLevel() {
+
+        bar.setVisibility(View.GONE);
+        tvRecomendation.setVisibility(View.GONE);
 
         if (mediumViolenceLevel <= 0 && highViolenceLevel <= 0){
             bar.setProgress(lowViolenceLevel);

@@ -199,11 +199,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/progressBar"
+            android:visibility="gone"
             android:max="28"
             android:progress="0"/>
 
         <TextView
+            android:text="@string/results_excellent"
             android:layout_width="match_parent"
+            android:visibility="gone"
             android:layout_height="wrap_content"
             android:id="@+id/tv_results"/>
 
