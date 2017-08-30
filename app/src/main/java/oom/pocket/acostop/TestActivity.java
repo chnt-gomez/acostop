@@ -2,10 +2,12 @@ package oom.pocket.acostop;
 
 import android.app.Dialog;
 import android.content.Intent;
-import android.os.AsyncTask;
+import android.net.Uri;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -13,23 +15,34 @@ import android.widget.CompoundButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.facebook.AccessToken;
+import com.facebook.CallbackManager;
+import com.facebook.login.LoginManager;
+import com.facebook.share.model.ShareLinkContent;
+import com.facebook.share.widget.ShareDialog;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+
+import java.util.Arrays;
+
+
 import oom.pocket.acostop.dialogs.DialogBuilder;
 
-import static android.R.attr.checked;
-import static android.R.attr.start;
 
 public class TestActivity extends AppCompatActivity {
 
     private int mediumViolenceLevel;
     private int highViolenceLevel;
     private int lowViolenceLevel;
+    private CallbackManager callbackManager;
+    private ShareDialog shareDialog;
     ProgressBar bar;
     CheckBox[] box_1;
     CheckBox[] box_2;
     CheckBox[] box_3;
     TextView tvRecomendation;
     Button calculateButton;
-    AsyncTask task;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +50,7 @@ public class TestActivity extends AppCompatActivity {
         setContentView(R.layout.activity_test);
         init();
     }
+
 
     private void calculate() {
         final Dialog dialog = DialogBuilder.newLoadingDialog(TestActivity.this);
@@ -56,7 +70,53 @@ public class TestActivity extends AppCompatActivity {
         tvRecomendation.setVisibility(View.VISIBLE);
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        callbackManager.onActivityResult(requestCode, resultCode, data);
+    }
+
+    private void share(){
+        if (isLoggedIn()){
+            if (shareDialog.canShow(ShareLinkContent.class)) {
+                ShareLinkContent content = new ShareLinkContent.Builder()
+                        .setContentUrl(Uri.parse("https://goo.gl/vbd3w1"))
+                        .build();
+                shareDialog.show(content);
+            }
+        }else{
+            loginForPublish();
+        }
+
+    }
+
+    private void loginForPublish() {
+        LoginManager.getInstance().logInWithPublishPermissions(this, Arrays.asList("publish_permission"));
+
+    }
+
+    private boolean isLoggedIn() {
+        return AccessToken.getCurrentAccessToken() != null;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.action_share){
+            share();
+            return true;
+        }
+        return false;
+    }
+
     private void init(){
+        MobileAds.initialize(this, "ca-app-pub-2236350735048598/1813503450");
+        AdView mAdView = (AdView) findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+
+
+        callbackManager = CallbackManager.Factory.create();
+        shareDialog = new ShareDialog(TestActivity.this);
         calculateButton = (Button)findViewById(R.id.btn_calculate);
         calculateButton.setOnClickListener(new View.OnClickListener() {
             @Override

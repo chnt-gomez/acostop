@@ -68,7 +68,7 @@
     <string name="acoso_nueve">9. Que se te acerquen de manera excesiva, que sin tu permiso te abracen o te den besos (incluso cuando no son en la boca). Que aprovechen largas cantidades de gente para tocarte (arrimones). Que te rocen con algun objeto o parte de su cuerpo cuando hay espacio suficiente para evitarlo. Que te acorralen en un espacio cerrado y sea imposible salir de ahí sin producir un roce o que se tengan que tocar.</string>
     <string name="acoso_ocho">8. Insistir en tener encuentros fuera del lugar de trabajo o de convivencia. Aún cuando le haz dicho que no deseas reunirte con la persona.</string>
     <string name="acoso_once">11. Que te miren con clara intención de crear pensamientos sexuales o con insinuaciones sexuales. (Como mirarte y despues hacer una seña erótica o esperar a que lo/la mires para que él/ella se mire sus partes íntimas).</string>
-    <string name="acoso_que_pasa_mi_pareja">11. Que te miren con clara intención de crear pensamientos sexuales o con insinuaciones sexuales. (Como mirarte y despues hacer una seña erótica o esperar a que lo/la mires para que él/ella se mire sus partes íntimas).</string>
+    <string name="acoso_que_pasa_mi_pareja">¿Qué pasa si mi pareja realiza alguno de estos actos conmigo y me gusta?</string>
     <string name="acoso_seis">6. Realizar llamadas telefónicas o enviar mensajes de texto con insinuaciones sexuales. Que te manden fotografías de él o ella desnudo/a o mostrando partes íntimas. Que te pidan fotografías tuyas desnudo/a.</string>
     <string name="acoso_siete">7. Que visiten insistentemente tus redes sociales y generen comentarios con insinuaciones sexuales.</string>
     <string name="acoso_tres">3. Que te hagan preguntas sobre tu vida sexual o sobre tu intimidad. Así como también que hagan referencia a tu vida sexual o que por medio de algún comentario traten de adivinar tus gustos y preferencias sexuales, así como también tus actividade sexuales.</string>
@@ -85,4 +85,10 @@
     <string name="intro_acoso">Algunas conductas que constituyen el acoso sexual son las siguientes:</string>
     <string name="intro_hostigamiento">A diferencia del acoso, el hostigamiento sexual suele suceder cuando existen condiciones que favorecen a tu agresor. Por ejemplo que tu agresor sea tu jefe o tu profesor ya que ambos podrían condicionarte con situaciones donde ellos tienen el control, como ofrecerte una mejor calificación o amenazarte con perder tu trabajo. Identifíca claros casos de hostigamiento sexual como los siguientes:</string>
     <string name="test_violencia_relacion">Test: \"Violencia en la Relación\"</string>
+    <string name="calculando">Calculando...</string>
+    <string name="calcular">Calcular</string>
+    <string name="info_facebook">Visita nuestra página en Facebook</string>
+    <string name="login_facebook">Iniciar sesión en Facebook</string>
+    <string name="share">Compartir</string>
+    <string name="share_app_title">Toma el test de violencia en tu relación</string>
 </resources>

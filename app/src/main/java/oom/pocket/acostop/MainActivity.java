@@ -16,7 +16,6 @@ import android.view.View;
 import android.widget.Button;
 
 import com.facebook.CallbackManager;
-import com.facebook.login.LoginManager;
 import com.facebook.share.widget.LikeView;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
@@ -24,7 +23,6 @@ import com.google.android.gms.ads.MobileAds;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.util.Arrays;
 
 import oom.pocket.acostop.views.TestCard;
 
@@ -33,8 +31,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     Button seekHelp;
     TestCard testViolenciaRelacion, infoAcoso, infoHostigamiento, infoFacebook;
-    LikeView likeView;
-    CallbackManager manager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,29 +42,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void init() {
         initWidgets();
         initAds();
-        initCallback();
-
     }
 
-    private void initCallback() {
-        manager = CallbackManager.Factory.create();
-    }
+
 
     private void initWidgets(){
         seekHelp = (Button)findViewById(R.id.btn_seek_help);
         seekHelp.setOnClickListener(this);
         testViolenciaRelacion = (TestCard)findViewById(R.id.tc_test_violencia_relacion);
         testViolenciaRelacion.setOnButtonClickListener(this);
-        likeView = (LikeView)findViewById(R.id.likeView);
         infoAcoso = (TestCard)findViewById(R.id.tc_acoso);
         infoAcoso.setOnButtonClickListener(this);
         infoFacebook = (TestCard)findViewById(R.id.tc_facebook);
         infoFacebook.setOnButtonClickListener(this);
         infoHostigamiento = (TestCard)findViewById(R.id.tc_hostigamiento);
         infoHostigamiento.setOnButtonClickListener(this);
-        likeView.setLikeViewStyle(LikeView.Style.STANDARD);
-        likeView.setAuxiliaryViewPosition(LikeView.AuxiliaryViewPosition.INLINE);
-        likeView.setObjectIdAndType("https://www.facebook.com/acostop", LikeView.ObjectType.PAGE);
     }
 
     private void initAds(){
@@ -100,20 +88,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         return true;
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == R.id.action_facebook){
-            loginToFacebook();
-            return true;
-        }
-        return false;
-    }
-
-
-
-    private void loginToFacebook() {
-        LoginManager.getInstance().logInWithReadPermissions(MainActivity.this, Arrays.asList("public_profile"));
-    }
 
     @Override
     public void onClick(View v) {
@@ -147,12 +121,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } catch (Exception e) {
             return new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/acostop"));
         }
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        manager.onActivityResult(requestCode, resultCode, data);
-
     }
 }

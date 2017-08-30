@@ -27,6 +27,9 @@
         <activity android:name=".BrowserActivity" />
         <activity android:name=".ActivityAcoso" />
         <activity android:name=".ActivityHostigamiento"/>
+        <provider android:authorities="com.facebook.app.FacebookContentProvider1576776569047213"
+            android:name="com.facebook.FacebookContentProvider"
+            android:exported="true"/>
     </application>
 
 </manifest>
