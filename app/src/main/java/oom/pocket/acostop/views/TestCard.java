@@ -46,6 +46,7 @@ public class TestCard extends LinearLayout {
             LinearLayout.LayoutParams textParams = new LinearLayout.LayoutParams(
                     LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT
             );
+            this.setBackgroundResource(R.drawable.border_simple);
             textParams.gravity = Gravity.CENTER_VERTICAL;
             this.setOrientation(HORIZONTAL);
             button = new ImageButton(context, null);
