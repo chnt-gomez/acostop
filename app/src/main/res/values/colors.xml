@@ -6,4 +6,7 @@
 
     <color name="colorInfo">#1970fc</color>
     <color name="colorInfoDark">#0e3f8e</color>
+
+    <color name="colorQuestion">#b042f4</color>
+    <color name="colorQuestionDark">#7601bf</color>
 </resources>

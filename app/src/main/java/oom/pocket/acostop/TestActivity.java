@@ -101,11 +101,8 @@ public class TestActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == R.id.action_share){
-            share();
-            return true;
-        }
-        return false;
+
+            return false;
     }
 
     private void init(){

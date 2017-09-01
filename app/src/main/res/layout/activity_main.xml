@@ -58,6 +58,16 @@
             app:label_text="@string/info_facebook"
             android:layout_marginBottom="@dimen/activity_horizontal_margin"/>
 
+        <oom.pocket.acostop.views.TestCard
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:button_id="@+id/btn_acoso"
+            app:button_src="@drawable/ic_comment_question_outline"
+            app:button_background="@drawable/selector_button_question"
+            android:id="@+id/tc_denuncia_acoso"
+            app:label_text="@string/q_acoso"
+            android:layout_marginBottom="@dimen/activity_horizontal_margin"/>
+
 
         <android.support.v4.widget.Space
             android:layout_width="match_parent"

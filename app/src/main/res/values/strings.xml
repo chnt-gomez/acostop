@@ -93,4 +93,11 @@
     <string name="calculando">Calculando...</string>
     <string name="share">Compartir</string>
     <string name="share_app_title">Toma el test de violencia en tu relación</string>
+    <string name="q_acoso">Procedimiento para presentar una denuncia por acoso sexual.</string>
+    <string name="procedimiento_acoso_intro">Si has sido víctima de acoso o violencia sexual, puedes presentar una denuncia. Sigue el manual del procedimiento de quejas por acoso sexual.</string>
+    <string name="paso_1_intro">1. Empieza por identificar tu queja.</string>
+    <string name="paso_1_desc">Tu queja la puedes presentar de manera verbal, escrita o por cualquier medio electrónico a la Direccion de Orientación Ciudadana y de Derechos Humanos y los eventos que quieras denuniar no podrán tener mas de un año de haber sucedido.</string>
+    <string name="recuerda_ratificar">Una vez presentada, tienes tres días para presentarte en Rio de la Plata # 48, Piso 13, Col. Cuauhtémoc C.P. 06500, Del. Cuauhtémoc, en la Ciudad de México. Cerca de Metro Chapultepec o Sevilla para ratificar tu denuncia.</string>
+    <string name="ir_al_sitio_web">Ir al sitio web</string>
+
 </resources>

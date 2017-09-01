@@ -30,7 +30,7 @@ import oom.pocket.acostop.views.TestCard;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     Button seekHelp;
-    TestCard testViolenciaRelacion, infoAcoso, infoHostigamiento, infoFacebook;
+    TestCard testViolenciaRelacion, infoAcoso, infoHostigamiento, infoFacebook, qAcoso;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +57,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         infoFacebook.setOnButtonClickListener(this);
         infoHostigamiento = (TestCard)findViewById(R.id.tc_hostigamiento);
         infoHostigamiento.setOnButtonClickListener(this);
+        qAcoso = (TestCard)findViewById(R.id.tc_denuncia_acoso);
+        qAcoso.setOnButtonClickListener(this);
+
     }
 
     private void initAds(){
@@ -110,6 +113,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn_facebook:
                 startActivity(openFacebookPage());
+                break;
+            case R.id.btn_acoso:
+                startActivity(new Intent(MainActivity.this, ActivityProcedimientoAcoso.class));
                 break;
         }
     }
