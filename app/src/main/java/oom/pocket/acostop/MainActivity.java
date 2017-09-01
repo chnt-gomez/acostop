@@ -44,8 +44,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         initAds();
     }
 
-
-
     private void initWidgets(){
         seekHelp = (Button)findViewById(R.id.btn_seek_help);
         seekHelp.setOnClickListener(this);
